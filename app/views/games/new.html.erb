@@ -1,0 +1,19 @@
+<h1>******** Welcome to the longest word-game!********</h1>
+<h3>Here is your grid:</h3>
+<h2><%= @letters.join(" ") %></h2>
+<h1>**************************************************</h1>
+
+<form action="/score">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="guess" placeholder="guess">
+  <input type="submit" value="Try your best!">
+  <input type="hidden"name="array" value="<%=@letters.join(" ")%>">
+  <input type="hidden"name="start_time" value="<%=Time.now%>">
+</form>
+
+<!-- puts "What's your best shot?"
+start_time = Time.now
+attempt = gets.chomp
+end_time = Time.now
+
+
